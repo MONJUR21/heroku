@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,700&display=swap");
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --spacing1: 4px;
+  --spacing2: 8px;
+  --spacing3: 16px;
+  --hue: 400;
+  --background1: hsl(214, 14%, 20%);
+  --background2: hsl(214, 14%, 13%);
+  --background3: hsl(214, 14%, 5%);
+  --brand1: hsl(var(--hue) 80% 60%);
+  --brand2: hsl(var(--hue) 80% 50%);
+  --text1: hsl(0, 0%, 100%);
+  --text2: hsl(var(--hue), 4%, 80%);
+  --text3: hsl(var(--hue), 4%, 5%);
+  --error: hsl(359, 83%, 59%);
+  font-size: 1.25rem;
+}
+
+html {
+  font-family: "Exo";
+  color: white;
+  background-color: var(--background1);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing3);
+}
+
+a {
+  color: var(--brand2);
+  font-size: 0.8em;
+}
+
+form {
+  & > div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  & .greeting {
+    font-size: 0.8em;
+    color: var(--text2);
+  }
+
+  & .error {
+    color: var(--error);
+    font-size: 0.8em;
+  }
+
+  & .active-error {
+    color: var(--error);
+    & > label {
+      color: var(--error);  
+    }
+  }
+
+  & button, input {
+    border: 4px transparent;
+    padding: var(--spacing2);
+    border-radius: var(--spacing1);
+    border: 4px solid transparent;
+  }
+
+  & .active-error + input:not(:focus) {
+    border-color: var(--error);
+  }
+
+  & button {
+    color: var(--text3);
+    background: var(--brand1);
+    cursor: pointer;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    font-size: 1em;
+    padding: var(--spacing1);
+    &:hover {
+      background: var(--brand2);
+    }
+  }
+
+  label {
+    font-size: 0.9em;
+    color: var(--text2);
+  }
+}
+
+.container {
+  background: var(--background2);
+  padding: var(--spacing3);
+  border-radius: var(--spacing2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing3);
+  min-width: max(400px, 50vw);
+}
+
+
+
+.pen-description {
+  max-width: min-content;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}

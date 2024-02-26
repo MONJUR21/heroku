@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup form</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <form action="/signup" method="post" class="container" onsubmit="onSubmit(event)" novalidate>
+        <div>
+          <h3>Welcome Back</h3>
+          <div class='greeting'>We're so excited to see you again!</div>
+        </div>
+        <div>
+          <div>
+            <label for='username' minlength="4">username</label>
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <input id="username" name="username"  type="text" required />
+        </div>
+        <div>
+          <div>
+            <label for='password'>password</label>
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <input name="password" id='password' type='password' required minlength="8" />
+        </div>
+        <button type="submit">
+          Sign up
+        </button>
+        <span aria-live="assertive" id="js-loadingMsg" class="sr-only">
+           <!-- Use JavaScript to inject the the loading message -->
+        </span>
+      </form>
+      
+</body>
+</html>

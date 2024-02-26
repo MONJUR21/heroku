@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <form action="/login" method="post" class="container" onsubmit="onSubmit(event)" novalidate>
+        <div>
+          <h3>Welcome Back</h3>
+          <div class='greeting'>We're so excited to see you again!</div>
+        </div>
+        <div>
+          <div>
+            <label for='username' minlength="4">username</label>
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <input name="username" id='username' type="text" required />
+        </div>
+        <div>
+          <div>
+            <label for='password'>password</label>
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <input name="password" id='password' type='password' required minlength="8" />
+          <a href='#'>Forgot your password?</a>
+        </div>
+        <button type="submit">
+          Login
+        </button>
+      </form>
+      
+</body>
+</html>
